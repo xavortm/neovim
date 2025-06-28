@@ -4,3 +4,4 @@ require("alex.lazy_init")
 require("alex.remap")
 require("alex.autocmd")
 require("alex.set")
+
