@@ -4,7 +4,15 @@ return {
 	name = "rose-pine",
 	config = function()
 		require("rose-pine").setup({
-            -- Setup copied from a recepie from the docs.
+
+			enable = {
+				legacy_highlights = false,
+			},
+
+			styles = {
+				transparency = true,
+			},
+
 			highlight_groups = {
 				TelescopeBorder = { fg = "highlight_high", bg = "none" },
 				TelescopeNormal = { bg = "none" },
@@ -14,6 +22,9 @@ return {
 				TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
 			},
 		})
+
 		vim.cmd("colorscheme rose-pine")
 	end
 }
+
+

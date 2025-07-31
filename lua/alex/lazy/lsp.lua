@@ -9,6 +9,13 @@ return {
 
   opts = {
     servers = {
+      cssmodules_ls = {},
+      css_variables = {},
+      cssls = {},
+      tailwindcss = {},
+      vimls = {},
+      phpactor = {},
+
       lua_ls = {
         on_init = function(client)
           if client.workspace_folders then
