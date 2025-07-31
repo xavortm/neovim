@@ -14,7 +14,15 @@ return {
       cssls = {},
       tailwindcss = {},
       vimls = {},
-      phpactor = {},
+      intelephense = {
+        settings = {
+          intelephense = {
+            environment = {
+              includePaths = { os.getenv("HOME") .. "/.intelephense/wordpress-stubs" }
+            },
+          },
+        },
+      },
 
       lua_ls = {
         on_init = function(client)
