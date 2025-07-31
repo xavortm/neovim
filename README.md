@@ -92,24 +92,6 @@ First, install Composer globally. You can follow the official instructions on th
 
 On macOS, you can use Homebrew:
 
-```bash
-brew install composer
-```
-
-#### Coding Standards
-
-Make sure `phpcs` and `phpcbf` are globally available. Follow install steps at https://github.com/squizlabs/PHP_CodeSniffer
-
-Next, install the `10up-default` [coding standards](https://github.com/10up/phpcs-composer) for `phpcs` if you want to follow the same setup or just use the WordPress ones.
-
-Then, configure `phpcs` to use the `10up-default` (or what you decide) standard:
-
-```bash
-phpcs --config-set installed_paths ~/.composer/vendor/wp-coding-standards/wpcs,~/.composer/vendor/10up/phpcs-composer
-phpcs --config-set default_standard 10up-Default
-```
-
-Now, `phpcs` will hopefully use the `10up-default` coding standard by default. I had struggles getting this to work befre.
 
 ---
 
