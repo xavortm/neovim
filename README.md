@@ -82,6 +82,34 @@ To use Intelephense with a license, you need to create a license file.
 1.  Create a file `~/intelephense/licence.txt`.
 2.  Add your license key to this file. Only add the license text inside, nothing else.
 
+### WordPress Development
+
+For WordPress development, you'll need to install `composer` and the `10up-default` coding standards for `phpcs`.
+
+#### Composer Installation
+
+First, install Composer globally. You can follow the official instructions on the [Composer website](https://getcomposer.org/doc/00-intro.md#globally).
+
+On macOS, you can use Homebrew:
+
+```bash
+brew install composer
+```
+
+#### Coding Standards
+
+Make sure `phpcs` and `phpcbf` are globally available. Follow install steps at https://github.com/squizlabs/PHP_CodeSniffer
+
+Next, install the `10up-default` [coding standards](https://github.com/10up/phpcs-composer) for `phpcs` if you want to follow the same setup or just use the WordPress ones.
+
+Then, configure `phpcs` to use the `10up-default` (or what you decide) standard:
+
+```bash
+phpcs --config-set installed_paths ~/.composer/vendor/wp-coding-standards/wpcs,~/.composer/vendor/10up/phpcs-composer
+phpcs --config-set default_standard 10up-Default
+```
+
+Now, `phpcs` will hopefully use the `10up-default` coding standard by default. I had struggles getting this to work befre.
 
 ---
 
