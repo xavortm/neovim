@@ -75,6 +75,14 @@ Harpoon allows you to quickly mark files and jump between them.
 | `<C-k>`       | Navigate to the 3rd marked file.                       |
 | `<C-l>`       | Navigate to the 4th marked file.                       |
 
+### Intelephense License Setup
+
+To use Intelephense with a license, you need to create a license file.
+
+1.  Create a file `~/intelephense/licence.txt`.
+2.  Add your license key to this file. Only add the license text inside, nothing else.
+
+
 ---
 
 Made with ❤️ and Lua
