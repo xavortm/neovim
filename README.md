@@ -1,12 +1,9 @@
-<div align="center">
-
 # Neovim Configuration
 
 My personal Neovim configuration.
 
 [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/xavortm/neovim?utm_source=oss&utm_medium=github&utm_campaign=xavortm%2Fneovim&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)](https://coderabbit.ai)
 ![Work in progress](https://img.shields.io/badge/work_in_progress-blue)
-</div>
 
 ## ✨ Features
 
@@ -80,6 +77,4 @@ Harpoon allows you to quickly mark files and jump between them.
 
 ---
 
-<p align="center">
-  Made with ❤️ and Lua
-</p>
+Made with ❤️ and Lua
