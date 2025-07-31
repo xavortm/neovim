@@ -8,3 +8,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- Auto-run phpcs.cbf() on save for PHP files in a WP project
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.php",
+    callback = function()
+	require("phpcs").cbf()
+    end,
+})
+
