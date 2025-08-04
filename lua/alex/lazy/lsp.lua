@@ -17,7 +17,15 @@ return {
       intelephense = {
         settings = {
           intelephense = {
-            stubs = { "bcmath", "bz2", "calendar", "Core", "ctype", "curl", "date", "dom", "exif", "fileinfo", "filter", "ftp", "gd", "gettext", "hash", "iconv", "imagick", "intl", "json", "libxml", "mbstring", "mysqli", "mysqlnd", "openssl", "password", "pcre", "PDO", "pdo_mysql", "Phar", "readline", "redis", "Reflection", "session", "SimpleXML", "soap", "sockets", "sodium", "SPL", "standard", "tokenizer", "xml", "xmlreader", "xmlwriter", "zip", "zlib", "wordpress", "php" },
+            stubs = {
+              "bcmath", "bz2", "calendar", "Core", "ctype", "curl", "date", "dom", "exif",
+              "fileinfo", "filter", "ftp", "gd", "gettext", "hash", "iconv", "imagick",
+              "intl", "json", "libxml", "mbstring", "mysqli", "mysqlnd", "openssl",
+              "password", "pcre", "PDO", "pdo_mysql", "Phar", "readline", "redis",
+              "Reflection", "session", "SimpleXML", "soap", "sockets", "sodium", "SPL",
+              "standard", "tokenizer", "xml", "xmlreader", "xmlwriter", "zip", "zlib",
+              "wordpress", "php"
+            },
             files = {
               maxSize = 1000000
             },
