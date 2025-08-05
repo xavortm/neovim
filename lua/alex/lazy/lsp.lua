@@ -9,11 +9,16 @@ return {
 
   opts = {
     servers = {
+      -- frontend development
       cssmodules_ls = {},
       css_variables = {},
       cssls = {},
       tailwindcss = {},
-      vimls = {},
+
+      -- Just having fun:
+      gopls = {},
+
+      -- WordPress focused
       intelephense = {
         settings = {
           intelephense = {
@@ -33,6 +38,8 @@ return {
         },
       },
 
+      -- focus on vim as I don't do lua:
+      vimls = {},
       lua_ls = {
         on_init = function(client)
           if client.workspace_folders then
