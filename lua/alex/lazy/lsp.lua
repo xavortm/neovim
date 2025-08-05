@@ -71,7 +71,7 @@ return {
     local lspconfig = require('lspconfig')
 
     -- Defines the on_attach function
-    local on_attach = function(client, bufnr)
+    local on_attach = function(_client, bufnr)
       -- lsp_signature
       require("lsp_signature").on_attach({
         bind = true,
