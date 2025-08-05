@@ -82,6 +82,16 @@ To use Intelephense with a license, you need to create a license file.
 1.  Create a file `~/intelephense/licence.txt`.
 2.  Add your license key to this file. Only add the license text inside, nothing else.
 
+### WordPress Development
+
+For WordPress development, you'll need to install `composer` and the `10up-default` coding standards for `phpcs`.
+
+#### Composer Installation
+
+First, install Composer globally. You can follow the official instructions on the [Composer website](https://getcomposer.org/doc/00-intro.md#globally).
+
+On macOS, you can use Homebrew:
+
 
 ---
 
