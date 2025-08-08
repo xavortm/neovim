@@ -7,8 +7,13 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     opts = {
-      -- lsp_keymaps = false,
-      -- other options
+      lsp_keymaps = true,  -- Enable Go-specific LSP keymaps
+      lsp_codelens = true, -- Enable code lens
+      diagnostic = {       -- Customize diagnostics
+        underline = true,
+        virtual_text = { space = 0, prefix = "■" },
+        signs = true,
+      },
     },
     config = function(_lp, opts)
       require("go").setup(opts)
