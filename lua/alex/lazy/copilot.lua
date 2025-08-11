@@ -1,5 +1,4 @@
 return {
-return {
   {
     "github/copilot.vim",
     event = "InsertEnter",
@@ -15,5 +14,4 @@ return {
       })
     end,
   },
-}
 }
