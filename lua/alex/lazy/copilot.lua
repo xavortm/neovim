@@ -1,14 +1,19 @@
 return {
+return {
   {
     "github/copilot.vim",
     event = "InsertEnter",
-    config = function()
+    init = function()
       vim.g.copilot_no_tab_map = true
-      vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#Accept("<CR>")', {
+    end,
+    config = function()
+      vim.keymap.set("i", "<C-l>", 'copilot#Accept("<CR>")', {
         expr = true,
         silent = true,
-        noremap = true
+        noremap = true,
+        desc = "Copilot: Accept suggestion",
       })
     end,
-  }
+  },
+}
 }
