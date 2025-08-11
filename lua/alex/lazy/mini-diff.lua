@@ -1,6 +1,7 @@
 return {
   {
     "echasnovski/mini.diff",
+    event = "VeryLazy",
     config = function()
       local diff = require("mini.diff")
       diff.setup({
