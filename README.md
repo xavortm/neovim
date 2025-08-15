@@ -3,13 +3,13 @@
 
 My personal Neovim configuration for Neovim 0.9+.
 
-[![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/xavortm/neovim?utm_source=oss&utm_medium=github&utm_campaign=xavortm%2Fneovim&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)](https://coderabbit.ai)
 ![Work in progress](https://img.shields.io/badge/work_in_progress-blue)
+
+<img width="2564" height="1356" alt="image" src="https://github.com/user-attachments/assets/81acbfc0-f605-4070-b22e-08a147a870d1" />
 
 ---
 
 ## 📚 Table of Contents
-
 
 - [Neovim Configuration](#neovim-configuration)
   - [📚 Table of Contents](#-table-of-contents)
@@ -26,8 +26,6 @@ My personal Neovim configuration for Neovim 0.9+.
   - [🛠️ Troubleshooting](#️-troubleshooting)
   - [🤝 Contributing](#-contributing)
   - [📄 License](#-license)
-
-
 
 ## ✨ Features
 
