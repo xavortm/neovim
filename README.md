@@ -15,8 +15,7 @@ My personal Neovim configuration for Neovim 0.9+.
   - [📚 Table of Contents](#-table-of-contents)
   - [✨ Features](#-features)
   - [🔌 Plugins](#-plugins)
-  - [📦 Requirements](#-requirements)
-  - [🚀 Installation](#-installation)
+  - [� Installation](#-installation)
   - [⌨️ Keybindings](#️-keybindings)
     - [📌 Harpoon Usage](#-harpoon-usage)
     - [🧩 Intelephense License Setup](#-intelephense-license-setup)
@@ -48,7 +47,7 @@ This configuration is built on top of a curated list of plugins, including:
 - **[Comment.nvim](https://github.com/numToStr/Comment.nvim)**: Smart commenting.
 - **[Gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)**: Git decorations.
 - **[Harpoon](https://github.com/ThePrimeagen/harpoon)**: File marking and navigation.
-- **[LSP Config](https://github.com/neovim/nvim-lspconfig)**, **[Mason](https://github.com/williamboman/mason.nvim)**, **[Luasnip](https://github.com/L3MON4D3/LuaSnip)**, etc.: The core of the modern Neovim experience.
+- **[LSP Config](https://github.com/neovim/nvim-lspconfig)**, **[Mason](https://github.com/williamboman/mason.nvim)**, **[Luasnip](https://github.com/L3MON4D3/LuaSnip)**, **[nvim-cmp](https://github.com/hrsh7th/nvim-cmp)**, **[Neogit](https://github.com/TimUntersberger/neogit)**, etc.: The core of the modern Neovim experience.
 - **[Rose-pine](https://github.com/rose-pine/neovim)**: A beautiful, modern theme.
 - **[Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)**: Powerful fuzzy finding.
 - **[Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)**: Advanced syntax highlighting and code parsing.
@@ -56,9 +55,9 @@ This configuration is built on top of a curated list of plugins, including:
 
 ...and more. See the [`lua/alex/lazy`](lua/alex/lazy) directory for the full list and configuration.
 
-## � Requirements
+-## 📦 Requirements
 
-- **Neovim 0.9+** ([Install](https://github.com/neovim/neovim/releases)). I use 0.11.0
+- **Neovim 0.9+** ([Install](https://github.com/neovim/neovim/releases)). (Tested with 0.11.0)
 - **git**
 - **curl** or **wget**
 - **[ripgrep](https://github.com/BurntSushi/ripgrep)** (for better search)
@@ -118,12 +117,14 @@ The main keybindings are defined in [`lua/alex/remap.lua`](lua/alex/remap.lua). 
 
 To use [Intelephense](https://intelephense.com/) with a license:
 
-1. Create a file at `~/intelephense/licence.txt`.
+1. Create a file at `~/intelephense/license.txt`.
 2. Add your license key to this file (only the license text, nothing else).
 
 ### 📝 WordPress Development
 
-For WordPress development, install `composer` and the `10up-default` coding standards for `phpcs`. I have documented some of the steps in [this blog post](https://xavortm.com/php_cs-in-neovim/)
+For WordPress development, install `composer` and the `10up-default` coding standards for `phpcs`.
+
+> **Further reading:** See my [blog post on PHP CS in Neovim](https://xavortm.com/php_cs-in-neovim/) for more details.
 
 #### Composer Installation
 
@@ -162,7 +163,7 @@ If you encounter issues, feel free to open an issue or discussion on the reposit
 
 ## 🤝 Contributing
 
-Contributions, suggestions, and PRs are welcome, but I suggest you just set it up as you want in your project. Please open an issue or pull request if you have ideas or improvements, I don\'t mind making my setup better :) Just keep in mind it\'s my personal setup.
+Contributions, suggestions, and PRs are welcome! Please open an issue or pull request if you have ideas or improvements. This is my personal setup, so changes may not always be accepted, but I'm happy to consider anything that makes it better for everyone.
 
 ## 📄 License
 
