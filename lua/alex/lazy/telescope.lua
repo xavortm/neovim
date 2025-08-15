@@ -3,6 +3,7 @@ return {
 		"nvim-telescope/telescope.nvim",
 
 		dependencies = {
+			"nvim-telescope/telescope-live-grep-args.nvim",
 			"plenary",
 		},
 
@@ -17,7 +18,10 @@ return {
 				},
 			})
 
-			require("telescope").load_extension("ui-select")
+			local telescope = require("telescope")
+
+			telescope.load_extension("live_grep_args")
+			telescope.load_extension("ui-select")
 
 			local builtin = require("telescope.builtin")
 
@@ -26,6 +30,9 @@ return {
 			}) -- Find all files
 
 			vim.keymap.set("n", "<C-p>", builtin.git_files, {}) -- Find all in git
+
+			-- Search with args:
+			vim.keymap.set("n", "<leader>sg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 			--
 			-- Find everything matching the word under the cursor
 			vim.keymap.set("n", "<leader>sw", function()
