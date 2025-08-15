@@ -2,21 +2,10 @@ return {
   'saghen/blink.cmp',
   dependencies = {
     'rafamadriz/friendly-snippets',
-      "fang2hou/blink-copilot",
-    opts = {
-      max_completions = 1,
-      max_attempts = 2,
-    }
+    "fang2hou/blink-copilot",
   },
-
   version = '1.*',
   opts = {
-    keymap = {
-      preset = 'default'
-    },
-    appearance = {
-      nerd_font_variant = 'mono'
-    },
     completion = {
       documentation = {
         auto_show = true,

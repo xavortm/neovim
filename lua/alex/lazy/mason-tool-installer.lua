@@ -13,6 +13,10 @@ return {
           "stylua",
         },
         auto_update = true,
+        integrations = {
+          "mason-lspconfig",
+          "mason-null-ls",
+        },
       }
     end,
   }

@@ -1,10 +1,11 @@
 return {
   {
     "github/copilot.vim",
-    cmd = "Copilot",
     event = "BufWinEnter",
     init = function()
       vim.g.copilot_no_maps = true
+      vim.g.copilot_no_tab_maps = true
+      vim.g.copilot_assume_mapped = true
     end,
     config = function()
       -- Block the normal Copilot suggestions
