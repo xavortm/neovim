@@ -15,7 +15,8 @@ My personal Neovim configuration for Neovim 0.9+.
   - [📚 Table of Contents](#-table-of-contents)
   - [✨ Features](#-features)
   - [🔌 Plugins](#-plugins)
-  - [� Installation](#-installation)
+  - [📦 Requirements](#-requirements)
+  - [🚀 Installation](#-installation)
   - [⌨️ Keybindings](#️-keybindings)
     - [📌 Harpoon Usage](#-harpoon-usage)
     - [🧩 Intelephense License Setup](#-intelephense-license-setup)
@@ -36,7 +37,7 @@ My personal Neovim configuration for Neovim 0.9+.
 - **LSP Support**: Full-featured language server support with `mason` and custom LSP setup.
 - **Git Integration**: Seamless git workflow with `gitsigns` and `neogit`.
 - **Fuzzy Finding**: Quick file and text searching with `telescope`.
-- **Beautiful Theme**: Uses `rose-pine` for a modern look.
+- **Moonfly Theme**: A beautiful, modern theme.
 - **And much more...**
 
 ## 🔌 Plugins
@@ -48,14 +49,14 @@ This configuration is built on top of a curated list of plugins, including:
 - **[Gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)**: Git decorations.
 - **[Harpoon](https://github.com/ThePrimeagen/harpoon)**: File marking and navigation.
 - **[LSP Config](https://github.com/neovim/nvim-lspconfig)**, **[Mason](https://github.com/williamboman/mason.nvim)**, **[Luasnip](https://github.com/L3MON4D3/LuaSnip)**, **[nvim-cmp](https://github.com/hrsh7th/nvim-cmp)**, **[Neogit](https://github.com/TimUntersberger/neogit)**, etc.: The core of the modern Neovim experience.
-- **[Rose-pine](https://github.com/rose-pine/neovim)**: A beautiful, modern theme.
 - **[Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)**: Powerful fuzzy finding.
 - **[Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)**: Advanced syntax highlighting and code parsing.
 - **[Which-key.nvim](https://github.com/folke/which-key.nvim)**: Keybinding hints.
+- **[Moonfly.nvim](https://github.com/bluz71/vim-moonfly-colors)**: A beautiful, modern theme.
 
 ...and more. See the [`lua/alex/lazy`](lua/alex/lazy) directory for the full list and configuration.
 
--## 📦 Requirements
+## 📦 Requirements
 
 - **Neovim 0.9+** ([Install](https://github.com/neovim/neovim/releases)). (Tested with 0.11.0)
 - **git**
