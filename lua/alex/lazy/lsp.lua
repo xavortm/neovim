@@ -14,6 +14,7 @@ return {
       css_variables = {},
       cssls = {},
       tailwindcss = {},
+      biome = {},
 
       -- Just having fun:
       gopls = {},
@@ -72,7 +73,7 @@ return {
           Lua = {}
         }
       }
-    }
+    },
   },
   config = function(_, opts)
     local lspconfig = require('lspconfig')
