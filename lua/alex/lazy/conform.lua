@@ -42,10 +42,10 @@ return {
 				end,
 				formatters_by_ft = {
 					lua = { "stylua" },
-					javascript = js_formatters,
-					javascriptreact = js_formatters,
-					typescript = js_formatters,
-					typescriptreact = js_formatters,
+					-- javascript = { "prettier" },
+					-- javascriptreact = { "prettier" },
+					-- typescriptreact = { "prettier" },
+					-- typescript = { "prettier" },
 					go = { "goimports", "gofmt" },
 				},
 			}
