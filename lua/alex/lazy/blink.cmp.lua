@@ -9,7 +9,7 @@ return {
 		completion = {
 			documentation = {
 				auto_show = true,
-				auto_show_delay_ms = 500,
+				auto_show_delay_ms = 5,
 			},
 			accept = {
 				auto_brackets = {
@@ -17,11 +17,11 @@ return {
 				},
 			},
 			trigger = {
-				show_on_insert = false,
+				show_on_insert = true,
 			},
 		},
 		sources = {
-			default = { "copilot", "lsp", "path", "snippets" },
+			default = { "copilot", "lsp", "path" },
 			providers = {
 				copilot = {
 					name = "copilot",
