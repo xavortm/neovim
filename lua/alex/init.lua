@@ -17,7 +17,7 @@ require("alex.autocmd")
 require("alex.set")
 
 -- From nvim 0.11:
-vim.lsp.enable({ "gopls", "lua" })
+vim.lsp.enable({ "gopls", "lua", "tsgo" })
 
 vim.cmd("set completeopt+=noselect")
 
