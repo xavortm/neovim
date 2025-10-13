@@ -15,3 +15,23 @@ require("alex.lazy_init")
 require("alex.remap")
 require("alex.autocmd")
 require("alex.set")
+
+-- From nvim 0.11:
+vim.lsp.enable({ "gopls", "lua" })
+
+vim.cmd("set completeopt+=noselect")
+
+-- Enable auto complete
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(ev)
+		local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+		if client == nil then
+			return
+		end
+
+		if client:supports_method("textDocument/completion") then
+			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+		end
+	end,
+})

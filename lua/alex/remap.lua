@@ -1,5 +1,4 @@
-
--- Quickly remap for the way I prefer to use vim. 
+-- Quickly remap for the way I prefer to use vim.
 local ls = require("luasnip")
 
 -- Most used map for me, to quickly Explore files (this is the :Ex command).
@@ -23,7 +22,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- There is a "autocmd" file, but since this basically maps 
+-- There is a "autocmd" file, but since this basically maps
 -- commands, I am keeping it here:
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
@@ -97,7 +96,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		-- Open diagonstics float panel for easy error reading
 		vim.keymap.set("n", "gl", function()
-			vim.diagnostic.open_float() end, {
+			vim.diagnostic.open_float()
+		end, {
 			desc = "Open diagnostics float panel",
 		})
 	end,
@@ -168,6 +168,3 @@ vim.keymap.set("n", "<F9>", "<cmd>FloatermNext<CR>", { silent = true, desc = "Ne
 vim.keymap.set("t", "<F9>", "<C-\\><C-n>:FloatermNext<CR>", { silent = true, desc = "Next floaterm" })
 vim.keymap.set("n", "<F12>", "<cmd>FloatermToggle<CR>", { silent = true, desc = "Toggle floaterm" })
 vim.keymap.set("t", "<F12>", "<C-\\><C-n>:FloatermToggle<CR>", { silent = true, desc = "Toggle floaterm" })
-
-
-
