@@ -29,9 +29,9 @@ require("alex.set")
 vim.lsp.enable({
 	"gopls",
 	"lua",
-	"tsgo",
 	"php",
 	"cssls",
+	"tailwind",
 	"css_vars",
 	"cssmodules_ls",
 })
