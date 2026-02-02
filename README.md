@@ -86,7 +86,3 @@ For Intelephense license, create `~/intelephense/license.txt` with your key.
 
 - **LSP not working**: Check `:LspInfo` and ensure servers are installed
 - **General issues**: Try `nvim --clean` or run `:checkhealth`
-
-## License
-
-MIT License. See [LICENSE](LICENSE) for details.
