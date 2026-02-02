@@ -80,7 +80,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.lsp.buf.signature_help()
 		end, { buffer = true })
 
-		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers["signature_help"], {
+		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 			border = "single",
 			close_events = { "CursorMoved", "BufHidden", "InsertCharPre" },
 		})
@@ -159,12 +159,3 @@ vim.keymap.set("n", "<leader>ds", function()
 	require("telescope.builtin").lsp_document_symbols()
 end, { desc = "Document Symbols (all types)" })
 
--- Floaterm keymaps
-vim.keymap.set("n", "<F7>", "<cmd>FloatermNew<CR>", { silent = true, desc = "New floaterm" })
-vim.keymap.set("t", "<F7>", "<C-\\><C-n>:FloatermNew<CR>", { silent = true, desc = "New floaterm" })
-vim.keymap.set("n", "<F8>", "<cmd>FloatermPrev<CR>", { silent = true, desc = "Previous floaterm" })
-vim.keymap.set("t", "<F8>", "<C-\\><C-n>:FloatermPrev<CR>", { silent = true, desc = "Previous floaterm" })
-vim.keymap.set("n", "<F9>", "<cmd>FloatermNext<CR>", { silent = true, desc = "Next floaterm" })
-vim.keymap.set("t", "<F9>", "<C-\\><C-n>:FloatermNext<CR>", { silent = true, desc = "Next floaterm" })
-vim.keymap.set("n", "<F12>", "<cmd>FloatermToggle<CR>", { silent = true, desc = "Toggle floaterm" })
-vim.keymap.set("t", "<F12>", "<C-\\><C-n>:FloatermToggle<CR>", { silent = true, desc = "Toggle floaterm" })
