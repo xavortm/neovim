@@ -23,9 +23,9 @@ return {
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
-				javascript = { "biome", "biome-organize-imports" },
+				-- javascript = { "biome", "biome-organize-imports" },
 				javascriptreact = { "biome", "biome-organize-imports" },
-				typescript = { "biome", "biome-organize-imports" },
+				-- typescript = { "biome", "biome-organize-imports" },
 				typescriptreact = { "biome", "biome-organize-imports" },
 				json = { "biome" },
 				go = { "goimports", "gofmt" },

@@ -18,9 +18,6 @@ return {
 					"stylua",
 				},
 				auto_update = true,
-				integrations = {
-					"mason-null-ls",
-				},
 			})
 		end,
 	},

@@ -24,3 +24,20 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		require("phpcs").cbf()
 	end,
 })
+
+-- Handle auto-formatting of comments for multiple languages
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "php", "javascript", "typescript", "css" },
+	callback = function()
+		-- s1:/* -> Start with /*, offset next line by 1 space
+		-- m: *  -> Middle starts with space + star (note: two spaces for proper formatting)
+		-- ex:*/  -> End with */
+		vim.opt_local.comments = "s1:/*,m: * ,ex:*/"
+
+		-- j: Remove comment leader when joining lines
+		-- r: Auto-insert leader after <Enter>
+		-- o: Auto-insert leader after 'o' or 'O'
+		-- q: Allow formatting of comments with 'gq' or 'gw'
+		vim.opt_local.formatoptions:append("jroq")
+	end,
+})
