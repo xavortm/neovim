@@ -22,10 +22,13 @@ vim.lsp.enable({
 	"css_vars",
 	"cssmodules_ls",
 	"pyright",
+	"emmet_ls",
 })
 
 -- Makes auto complete useable
-vim.cmd("set completeopt+=noselect")
+-- menuone: show popup even with one match
+-- noselect: don't auto-select first item
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- Enable auto complete
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -37,7 +40,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 
 		if client:supports_method("textDocument/completion") then
-			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+			-- For emmet, disable autotrigger and use manual trigger instead
+			if client.name == "emmet_ls" then
+				vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = false })
+			else
+				vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+			end
 		end
 	end,
 })
