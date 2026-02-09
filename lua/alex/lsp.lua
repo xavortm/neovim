@@ -22,6 +22,7 @@ vim.lsp.enable({
 	"css_vars",
 	"cssmodules_ls",
 	"pyright",
+	"emmet_ls",
 })
 
 -- Makes auto complete useable
@@ -37,7 +38,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 
 		if client:supports_method("textDocument/completion") then
-			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+			if client.name ~= "emmet_ls" then
+				vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+			end
 		end
 	end,
 })
