@@ -115,10 +115,54 @@ vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r>fC-w>\>/<C-r><C-w>/gI<Left><Left>
 })
 
 vim.keymap.set("i", "<C-k>", function()
+	-- First try to expand emmet if in an emmet-supported filetype
+	local ft = vim.bo.filetype
+	local emmet_fts = { html = true, css = true, javascriptreact = true, typescriptreact = true, astro = true }
+
+	if emmet_fts[ft] then
+		local clients = vim.lsp.get_clients({ bufnr = 0, name = "emmet_ls" })
+		if #clients > 0 then
+			local client = clients[1]
+			local params = vim.lsp.util.make_position_params(0, client.offset_encoding)
+			local result = vim.lsp.buf_request_sync(0, "textDocument/completion", params, 1000)
+
+			if result then
+				for _, res in pairs(result) do
+					if res.result then
+						local items = res.result.items or res.result
+						if items and #items > 0 then
+							local item = items[1]
+							if item.textEdit then
+								-- Apply the text edit (replaces abbreviation with expansion)
+								local edit = item.textEdit
+								local start_line = edit.range.start.line
+								local start_col = edit.range.start.character
+								local end_line = edit.range["end"].line
+								local end_col = edit.range["end"].character
+
+								-- Delete the abbreviation
+								vim.api.nvim_buf_set_text(0, start_line, start_col, end_line, end_col, {})
+
+								-- Move cursor to start position
+								vim.api.nvim_win_set_cursor(0, { start_line + 1, start_col })
+
+								-- Expand the snippet using LuaSnip
+								ls.snip_expand(ls.parser.parse_snippet("", edit.newText))
+								return
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+
+	-- Fall back to regular LuaSnip expand
 	if ls.expand_or_jumpable() then
 		ls.expand_or_jump()
 	end
 end, { silent = true, noremap = true })
+
 
 vim.keymap.set({ "i", "s" }, "<C-L>", function()
 	ls.jump(1)
