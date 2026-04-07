@@ -1,13 +1,14 @@
 return {
-	"bluz71/vim-moonfly-colors",
-	name = "moonfly",
+	"folke/tokyonight.nvim",
+	name = "tokyonight",
 	lazy = false,
 	priority = 1000,
-	init = function()
-		vim.g.moonflyNormalFloat = true
-		vim.g.moonflyTransparent = true
-	end,
-	config = function()
-		vim.cmd.colorscheme("moonfly")
+	opts = {
+		style = "night",
+		transparent = true,
+	},
+	config = function(_, opts)
+		require("tokyonight").setup(opts)
+		vim.cmd.colorscheme("tokyonight")
 	end,
 }

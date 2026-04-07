@@ -30,7 +30,7 @@ The orchestrator loads modules in order:
 - Fuzzy finding: **Telescope** with live-grep-args extension
 - File navigation: **Harpoon** (branch harpoon2)
 - Git: **gitsigns.nvim** + **neogit** + **git-conflict.nvim**
-- Theme: **moonfly**
+- Theme: **tokyonight** (night variant, transparent)
 
 ## Enabled LSP Servers
 
