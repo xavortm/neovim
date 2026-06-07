@@ -77,17 +77,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		})
 
 		vim.keymap.set("i", "<c-s>", function()
-			vim.lsp.buf.signature_help()
+			vim.lsp.buf.signature_help({ border = "single" })
 		end, { buffer = true })
 
-		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-			border = "single",
-			close_events = { "CursorMoved", "BufHidden", "InsertCharPre" },
-		})
-
-		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-			border = "single",
-		})
+		vim.keymap.set("n", "K", function()
+			vim.lsp.buf.hover({ border = "single" })
+		end, { buffer = true })
 
 		-- Same as K but in insert mode.
 		-- vim.keymap.set("i", "<C-h>", function()
