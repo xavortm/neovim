@@ -17,6 +17,7 @@ vim.lsp.enable({
 	"gopls",
 	"lua",
 	"php",
+	"html",
 	"cssls",
 	"tailwind",
 	"css_vars",

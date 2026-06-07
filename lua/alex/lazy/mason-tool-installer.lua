@@ -16,6 +16,11 @@ return {
 					"lua-language-server",
 					"vim-language-server",
 					"stylua",
+					"html-lsp",
+					"css-lsp",
+					"emmet-ls",
+					"tailwindcss-language-server",
+				"cssmodules-language-server",
 				},
 				auto_update = true,
 			})
