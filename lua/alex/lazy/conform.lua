@@ -18,7 +18,7 @@ return {
 				local biome_files = { "biome.json", "biome.jsonc", ".biome.json", ".biome.jsonc" }
 				local cwd = vim.fn.getcwd()
 				for _, file in ipairs(biome_files) do
-					if vim.fn.filereadable(cwd .. "/" .. file) == 1 then
+					if vim.fn.filereadable(vim.fs.joinpath(cwd, file)) == 1 then
 						return true
 					end
 				end
