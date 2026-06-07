@@ -3,7 +3,7 @@ return {
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		dependencies = {
-			"plenary", -- short form as I named it.
+			"plenary",
 		},
 
 		config = function()

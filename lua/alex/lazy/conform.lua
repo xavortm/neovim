@@ -26,10 +26,13 @@ return {
 			end
 
 			local js_formatters
+			local json_formatter
 			if has_biome_config() then
 				js_formatters = { "biome", "biome-organize-imports" }
+				json_formatter = { "biome" }
 			else
 				js_formatters = { "prettier" }
+				json_formatter = { "prettier" }
 			end
 
 			return {
@@ -42,10 +45,11 @@ return {
 				end,
 				formatters_by_ft = {
 					lua = { "stylua" },
-					-- javascript = { "prettier" },
-					-- javascriptreact = { "prettier" },
-					-- typescriptreact = { "prettier" },
-					-- typescript = { "prettier" },
+					javascript = js_formatters,
+					javascriptreact = js_formatters,
+					typescript = js_formatters,
+					typescriptreact = js_formatters,
+					json = json_formatter,
 					go = { "goimports", "gofmt" },
 				},
 			}

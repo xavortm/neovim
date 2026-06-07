@@ -1,5 +1,4 @@
-
--- Quickly remap for the way I prefer to use vim. 
+-- Quickly remap for the way I prefer to use vim.
 local ls = require("luasnip")
 
 -- Most used map for me, to quickly Explore files (this is the :Ex command).
@@ -23,7 +22,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- There is a "autocmd" file, but since this basically maps 
+-- There is a "autocmd" file, but since this basically maps
 -- commands, I am keeping it here:
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
@@ -78,17 +77,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		})
 
 		vim.keymap.set("i", "<c-s>", function()
-			vim.lsp.buf.signature_help()
+			vim.lsp.buf.signature_help({ border = "single" })
 		end, { buffer = true })
 
-		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers["signature_help"], {
-			border = "single",
-			close_events = { "CursorMoved", "BufHidden", "InsertCharPre" },
-		})
-
-		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-			border = "single",
-		})
+		vim.keymap.set("n", "K", function()
+			vim.lsp.buf.hover({ border = "single" })
+		end, { buffer = true })
 
 		-- Same as K but in insert mode.
 		-- vim.keymap.set("i", "<C-h>", function()
@@ -97,7 +91,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		-- Open diagonstics float panel for easy error reading
 		vim.keymap.set("n", "gl", function()
-			vim.diagnostic.open_float() end, {
+			vim.diagnostic.open_float()
+		end, {
 			desc = "Open diagnostics float panel",
 		})
 	end,
@@ -115,10 +110,54 @@ vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r>fC-w>\>/<C-r><C-w>/gI<Left><Left>
 })
 
 vim.keymap.set("i", "<C-k>", function()
+	-- First try to expand emmet if in an emmet-supported filetype
+	local ft = vim.bo.filetype
+	local emmet_fts = { html = true, css = true, javascriptreact = true, typescriptreact = true, astro = true }
+
+	if emmet_fts[ft] then
+		local clients = vim.lsp.get_clients({ bufnr = 0, name = "emmet_ls" })
+		if #clients > 0 then
+			local client = clients[1]
+			local params = vim.lsp.util.make_position_params(0, client.offset_encoding)
+			local result = vim.lsp.buf_request_sync(0, "textDocument/completion", params, 1000)
+
+			if result then
+				for _, res in pairs(result) do
+					if res.result then
+						local items = res.result.items or res.result
+						if items and #items > 0 then
+							local item = items[1]
+							if item.textEdit then
+								-- Apply the text edit (replaces abbreviation with expansion)
+								local edit = item.textEdit
+								local start_line = edit.range.start.line
+								local start_col = edit.range.start.character
+								local end_line = edit.range["end"].line
+								local end_col = edit.range["end"].character
+
+								-- Delete the abbreviation
+								vim.api.nvim_buf_set_text(0, start_line, start_col, end_line, end_col, {})
+
+								-- Move cursor to start position
+								vim.api.nvim_win_set_cursor(0, { start_line + 1, start_col })
+
+								-- Expand the snippet using LuaSnip
+								ls.snip_expand(ls.parser.parse_snippet("", edit.newText))
+								return
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+
+	-- Fall back to regular LuaSnip expand
 	if ls.expand_or_jumpable() then
 		ls.expand_or_jump()
 	end
 end, { silent = true, noremap = true })
+
 
 vim.keymap.set({ "i", "s" }, "<C-L>", function()
 	ls.jump(1)
@@ -158,16 +197,4 @@ end, { desc = "Document Functions only" })
 vim.keymap.set("n", "<leader>ds", function()
 	require("telescope.builtin").lsp_document_symbols()
 end, { desc = "Document Symbols (all types)" })
-
--- Floaterm keymaps
-vim.keymap.set("n", "<F7>", "<cmd>FloatermNew<CR>", { silent = true, desc = "New floaterm" })
-vim.keymap.set("t", "<F7>", "<C-\\><C-n>:FloatermNew<CR>", { silent = true, desc = "New floaterm" })
-vim.keymap.set("n", "<F8>", "<cmd>FloatermPrev<CR>", { silent = true, desc = "Previous floaterm" })
-vim.keymap.set("t", "<F8>", "<C-\\><C-n>:FloatermPrev<CR>", { silent = true, desc = "Previous floaterm" })
-vim.keymap.set("n", "<F9>", "<cmd>FloatermNext<CR>", { silent = true, desc = "Next floaterm" })
-vim.keymap.set("t", "<F9>", "<C-\\><C-n>:FloatermNext<CR>", { silent = true, desc = "Next floaterm" })
-vim.keymap.set("n", "<F12>", "<cmd>FloatermToggle<CR>", { silent = true, desc = "Toggle floaterm" })
-vim.keymap.set("t", "<F12>", "<C-\\><C-n>:FloatermToggle<CR>", { silent = true, desc = "Toggle floaterm" })
-
-
 

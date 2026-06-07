@@ -42,3 +42,6 @@ vim.g.netrw_winsize = 25
 
 -- Recommended option for Avante.nvim
 vim.opt.laststatus = 3
+
+-- Add borders to floating windows
+vim.o.winborder = "rounded"

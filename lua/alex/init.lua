@@ -7,11 +7,13 @@ File summary:
 	autocmd.lua        - Custom autocommands.
 	remap.lua          - Key remappings.
 	set.lua            - Editor options/settings.
-	lazy_init.lua      - Lazy.nvim plugin manager setup.
+	lsp.lua            - LSP configuration and auto-completion.
+	bootstrap.lua      - Lazy.nvim plugin manager setup.
 	lazy/              - Plugin configs (one file per plugin).
 ]]
 
-require("alex.lazy_init")
+require("alex.bootstrap")
 require("alex.remap")
 require("alex.autocmd")
 require("alex.set")
+require("alex.lsp")
