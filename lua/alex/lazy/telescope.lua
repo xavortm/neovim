@@ -4,7 +4,7 @@ return {
 
 		dependencies = {
 			"nvim-telescope/telescope-live-grep-args.nvim",
-			"plenary",
+			"nvim-lua/plenary.nvim",
 		},
 
 		config = function()

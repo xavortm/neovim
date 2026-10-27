@@ -16,6 +16,10 @@ return {
 					"lua-language-server",
 					"vim-language-server",
 					"stylua",
+					"css-variables-language-server",
+					"cssmodules-language-server",
+					"tailwindcss-language-server",
+					"pyright",
 				},
 				auto_update = true,
 			})
